@@ -1,0 +1,48 @@
+<!--
+التكليف 01 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    -------------------------------------------------------------
+    this is the code "Code One"  that is NOT going to work because 
+    the element that has an ID = el,  has not yet been created
+    <script>
+        // Code One
+        document.getElementById("el").style.color = "red";
+    </script>
+    -------------------------------------------------------------
+    <script>
+        // Code Two will work fine
+        window.onload = function () {
+            document.getElementById("el").style.color = "red";
+        };
+    </script>
+</head>
+<body>
+    <h1 id="el">Page Title</h1>
+
+    <script>
+        // Code Three will work fine
+        document.getElementById("el").style.color = "red";
+    </script>
+</body>
+</html>
+-->
+
+<!------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="main.js"></script>
+</body>
+</html>
