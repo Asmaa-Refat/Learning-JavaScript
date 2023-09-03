@@ -1,3 +1,25 @@
+let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+console.log(my.slice(zero, ++counter).reverse());  //["Osama", "Elham", "Mazero", "Ahmed"]
+
+zero = 0;
+counter = 3;
+console.log(my.slice(++zero, counter).reverse());  //["Elham", "Mazero"]
+
+zero = 0;
+counter = 3;
+console.log(`${my[--counter].slice(zero,counter)}${my[1].slice(counter)}`);  //Elzero
+
+zero = 0;
+counter = 3;
+console.log(`${my[++zero][++counter]}${my[zero][++counter].toUpperCase()}`);   //"rO"
+
+/*--------------------------------------------------------------------- */
+/*--------------------------------------------------------------------- */
+/*--------------------------------------------------------------------- */
+
 // 040 - 047
 // التكليف 01
 let myFriends = ["Ahmed", "Elham", "Osama", "Gamal"];
