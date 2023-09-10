@@ -1,0 +1,43 @@
+.input {
+    border: none;
+    width: 318px;
+    height: 29px;
+    border-radius: 6px;
+    transform: translate(3px, -3px);
+}
+
+.add {
+    transform: translate(11px, -3px);   
+    border: none;
+    background: #e22f46;
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+}
+input:focus {
+    outline-color: whitesmoke;
+}
+
+.container {
+    background-color: #eaeae6; 
+    border-radius: 6px; 
+    width: 400px; 
+    margin-left: 22%; 
+    height: 25px; 
+    padding: 20px;
+}
+
+.tasks {
+    background-color: #eaeae6;
+    border-radius: 6px;
+    width: 406px;
+    margin-left: -5%;
+    height: 7px;
+    padding: 17px;
+    margin-top: 34px;
+}
+
+
+body {
+    font-family: sans-serif;
+}
