@@ -16,34 +16,34 @@
 /* ------------------------------------------------------------------------------------------------------- */ 
 // التكليف 02
 
-setTimeout(() => {
-    let container = document.createElement("div");
-    let word = document.createElement("div");
-    let sentence = document.createElement("div");
-    let close = document.createElement("button");
+// setTimeout(() => {
+//     let container = document.createElement("div");
+//     let word = document.createElement("div");
+//     let sentence = document.createElement("div");
+//     let close = document.createElement("button");
 
-    let wordText = document.createTextNode("Welcome");
-    let sentenceText = document.createTextNode("Welcome to Elzero Web School");
-    let cross = document.createTextNode("x");
+//     let wordText = document.createTextNode("Welcome");
+//     let sentenceText = document.createTextNode("Welcome to Elzero Web School");
+//     let cross = document.createTextNode("x");
 
-    close.style.cssText = "border-radius: 14px; border: none; background: red; color: white; float: right; transform: translate(5px, -73px);";
-    container.style.cssText = "width: 356px; height: 94px; background: #f5f3f4; border: 1px solid #e5e5e5; margin: 141px;";
-    word.style.cssText = "font-weight: bold; text-align: center; font-family: sans-serif; padding-top: 25px";
-    sentence.style.cssText = "text-align: center; padding-top: 9px; font-family: sans-serif; font-size: 11px;";
+//     close.style.cssText = "border-radius: 14px; border: none; background: red; color: white; float: right; transform: translate(5px, -73px);";
+//     container.style.cssText = "width: 356px; height: 94px; background: #f5f3f4; border: 1px solid #e5e5e5; margin: 141px;";
+//     word.style.cssText = "font-weight: bold; text-align: center; font-family: sans-serif; padding-top: 25px";
+//     sentence.style.cssText = "text-align: center; padding-top: 9px; font-family: sans-serif; font-size: 11px;";
 
-    close.addEventListener('click', ()=>{
-        container.remove();
-    });
+//     close.addEventListener('click', ()=>{
+//         container.remove();
+//     });
 
-    word.appendChild(wordText);
-    sentence.appendChild(sentenceText);
-    close.appendChild(cross);
+//     word.appendChild(wordText);
+//     sentence.appendChild(sentenceText);
+//     close.appendChild(cross);
 
-    container.appendChild(word);
-    container.appendChild(sentence);
-    container.appendChild(close);
-    document.body.appendChild(container);
-}, 5000);
+//     container.appendChild(word);
+//     container.appendChild(sentence);
+//     container.appendChild(close);
+//     document.body.appendChild(container);
+// }, 5000);
 
 /* ------------------------------------------------------------------------------------------------------- */ 
 /* ------------------------------------------------------------------------------------------------------- */ 
@@ -105,3 +105,70 @@ setTimeout(() => {
 /* ------------------------------------------------------------------------------------------------------- */ 
 
 //  111 - 114
+// التكليف 01
+// let colorSelector = document.getElementById("colorSelector");
+// let fontSelector = document.getElementById("fontSelector");
+// let sizeSelector = document.getElementById("sizeSelector");
+
+// let storedColor = localStorage.getItem("currentColor");
+// let storedFont = localStorage.getItem("currentFont");
+// let storedSize = localStorage.getItem("currentSize");
+
+// if(storedColor) {
+//     colorSelector.value = storedColor;
+//     document.body.style.backgroundColor = colorSelector.value;
+// }
+
+// if(storedFont) {
+//     fontSelector.value = storedFont;
+//     document.body.style.fontFamily = fontSelector.value;
+// }
+
+// if(storedSize) {
+//     sizeSelector.value = storedSize;
+//     document.body.style.fontSize = sizeSelector.value;
+// }
+
+// colorSelector.addEventListener("change", () => {
+//     document.body.style.backgroundColor = colorSelector.value;
+//     localStorage["currentColor"] = colorSelector.value;
+// });
+
+// fontSelector.addEventListener("change", ()=>{
+//     document.body.style.fontFamily = fontSelector.value;
+//     localStorage.setItem("currentFont", fontSelector.value);
+// });
+
+// sizeSelector.addEventListener("change", ()=>{
+//     document.body.style.fontSize = sizeSelector.value;
+//     localStorage.currentSize = sizeSelector.value;
+// });
+
+
+/* ------------------------------------------------------------------------------------------------------- */ 
+/* ------------------------------------------------------------------------------------------------------- */ 
+// التكليف 02
+
+// let nameField = document.getElementById("name");
+// let ageField = document.getElementById("age");
+// let selectFruit = document.getElementById("fruits");
+
+// nameField.value = sessionStorage["userName"] || " ";
+// ageField.value = sessionStorage["userAge"] || " ";
+// let selectedFruit = sessionStorage.getItem("selectedFruit");
+
+// if(selectedFruit) {
+//     selectFruit.value = selectedFruit;
+// }
+
+// nameField.addEventListener("input", ()=>{
+//     sessionStorage['userName'] = nameField.value;
+// });
+
+// ageField.addEventListener("input", ()=>{
+//     sessionStorage['userAge']= ageField.value ;    
+// });
+
+// selectFruit.addEventListener("change", ()=>{
+//     sessionStorage["selectedFruit"] = selectFruit.value;
+// });

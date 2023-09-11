@@ -1,8 +1,8 @@
-let addButton = document.querySelector(".add");
+let addTaskButton = document.querySelector(".add");
 let canvas = document.querySelector(".tasks");
 let inputField = document.querySelector(".input");
 let tasksList = [];
-let id = 0 | tasksList.length;
+let id = localStorage.tasks === undefined? 0: JSON.parse(localStorage.tasks).length ;
 
 window.onload = () => {
     if(localStorage.tasks) {
@@ -13,7 +13,6 @@ window.onload = () => {
             createOneTask(element['title']);
         });
     }
-    deleteTask();
 }
 
 function createOneTask(value) {
@@ -33,24 +32,30 @@ function createOneTask(value) {
     document.body.appendChild(canvas);
 }
 
-function deleteTask() {
+addTaskButton.addEventListener('click', ()=>{
+    if(inputField.value !== "") {
+        createOneTask(inputField.value);
+        tasksList.push({id: ++id, title: inputField.value});
+        localStorage.tasks = JSON.stringify(tasksList);
+        addEventOnDeleteButton();
+        inputField.value = "";
+    }
+});
+
+function addEventOnDeleteButton() {
     let canvasChildren = canvas.children;
     let len = canvasChildren.length;
-    for (let i = 0; i < len; ++i){
-        let child = canvasChildren[i].children[0];
-        child.addEventListener('click', ()=>{
-            canvasChildren[i].remove();
-            let newArray = tasksList.filter(obj => obj.id !== i);
-            tasksList = newArray;
-            localStorage.setItem('tasks', JSON.stringify(newArray));
-        });
-    }
+    
+    let deleteButton = canvasChildren[len-1].children[0]; //button
+    deleteButton.addEventListener('click', ()=>{
+        canvasChildren[len-1].remove();
+        console.log("delete");
+        let deletedIndex = tasksList[len-1].id;
+        console.log(deletedIndex);
+        let newArray = tasksList.filter(obj => obj.id !== deletedIndex);
+        tasksList = newArray;
+        localStorage.setItem('tasks', JSON.stringify(tasksList));
+    });
+    
 }
 
-addButton.addEventListener('click', ()=>{
-    createOneTask(inputField.value);
-
-    tasksList.push({id: ++id, title: inputField.value});
-    localStorage.tasks = JSON.stringify(tasksList);
-    inputField.value = "";
-});
