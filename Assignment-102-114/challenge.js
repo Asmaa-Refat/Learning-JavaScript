@@ -1,13 +1,13 @@
 let addTaskButton = document.querySelector(".add");
 let canvas = document.querySelector(".tasks");
 let inputField = document.querySelector(".input");
-let tasksList = [];
-let id = localStorage.tasks === undefined? 0: JSON.parse(localStorage.tasks).length ;
+let tasksList = [];      
+let id = localStorage.id || 0;
 
 window.onload = () => {
     if(localStorage.tasks) {
         tasksList = JSON.parse(localStorage.tasks);
-        id = tasksList.length;
+        id = localStorage.getItem("id");
 
         tasksList.forEach(element => {
             createOneTask(element['title']);
@@ -20,6 +20,7 @@ function createOneTask(value) {
     let taskContent = document.createTextNode(value);
     let deleteContent = document.createTextNode("Delete")
     let deleteButton = document.createElement("button");
+    deleteButton.className = "delete";
 
     canvas.style.cssText = "margin-left: 22%; height: auto;";
     deleteButton.style.cssText = "border: none; background: #e22f46; color: white; border-radius: 3px;transform: translate(3px, 1px); float: right;"
@@ -37,25 +38,24 @@ addTaskButton.addEventListener('click', ()=>{
         createOneTask(inputField.value);
         tasksList.push({id: ++id, title: inputField.value});
         localStorage.tasks = JSON.stringify(tasksList);
-        addEventOnDeleteButton();
         inputField.value = "";
+        localStorage["id"] = id;
     }
 });
 
-function addEventOnDeleteButton() {
-    let canvasChildren = canvas.children;
-    let len = canvasChildren.length;
-    
-    let deleteButton = canvasChildren[len-1].children[0]; //button
-    deleteButton.addEventListener('click', ()=>{
-        canvasChildren[len-1].remove();
-        console.log("delete");
-        let deletedIndex = tasksList[len-1].id;
-        console.log(deletedIndex);
-        let newArray = tasksList.filter(obj => obj.id !== deletedIndex);
-        tasksList = newArray;
+document.addEventListener("click", (element)=>{
+    if(element.target.className === "delete") {
+        element.target.parentElement.remove();
+
+        let canvasChildren = canvas.children;
+        let len = canvasChildren.length;
+        for(let i = 0; i < len; i++) {
+            tasksList[i].title = canvasChildren[i].firstChild.textContent;
+        }
+        tasksList = tasksList.slice(0, len);
+
         localStorage.setItem('tasks', JSON.stringify(tasksList));
-    });
-    
-}
+    }
+
+});
 
