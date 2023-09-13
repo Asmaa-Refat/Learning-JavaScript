@@ -50,9 +50,10 @@ console.log("- ------------ -");
 // التكليف 04
 
 let theNumber = 100020003000;
+//console.log(+[...new Set(theNumber.toString())].copyWithin(1,2).slice(0,3).join("")); //using numbers
 
-console.log(+[...new Set(theNumber.toString())].copyWithin(1,2).slice(0,3).join(""));
-// Needed Output
+console.log(+[...new Set(theNumber.toString())].copyWithin(+true, true+true).slice(false,true+true+true).join("")); //without using numbers
+// Needed Output 1023
 //123
 
 
@@ -63,11 +64,11 @@ console.log("- ------------ -");
 // التكليف 05
 let theName = "Elzero";
 
-console.log([...theName]);
-console.log(Array.from(theName));
-console.log(theName.split(""));
-console.log(Array.from(new Set(theName)));
-console.log([...new Set(theName)]);
+console.log([...theName]);  //1
+console.log(Array.from(theName));   //2
+console.log(theName.split(""));     //3
+console.log(Array.from(new Set(theName)));      //4
+console.log([...new Set(theName)]);     //5
 
 // Needed Output
 //['E', 'l', 'z', 'e', 'r', 'o']
@@ -105,11 +106,11 @@ console.log("- ------------ -");
 let numsOne = [1, 2, 3];
 let numsTwo = [4, 5, 6];
 
-console.log([...numsOne, ...numsTwo]);
-console.log(numsOne.concat(numsTwo));
+console.log([...numsOne, ...numsTwo]);  //1
+console.log(numsOne.concat(numsTwo));  //2
 
-numsOne.push(...numsTwo)
-console.log(numsOne);
+numsOne.push(...numsTwo) //3
+console.log(numsOne); //3
 
 
 // Needed Output
@@ -120,3 +121,12 @@ console.log("- ------------ -");
 /* ------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------ */
 // التكليف 08
+// Episode Challenge
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+console.log([...n1, ...n2].length * n2.shift());
+
+// Needed Output
+//210
