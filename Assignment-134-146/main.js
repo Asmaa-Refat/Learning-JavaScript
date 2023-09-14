@@ -51,7 +51,9 @@ let date2 = "25 - 10 - 1982";
 let date3 = "25 10 1982";
 let date4 = "25 10 82";
 
-let re5 = /\d{2}[\s \/]-?\s?10[\/ \s]-?\s?(19)?82/; // Write Pattern Here
+//let re5 = /\d{2}[\s \/]-?\s?10[\/ \s]-?\s?(19)?82/ig;          // Write Pattern Here
+//let re5 = /\d{2}(\/|\s-\s|\s)10(\/|\s-\s|\s)(\d\d)?\d\d/ig;   // or this
+let re5 = /(\d\d(\/|\s-\s|\s))+(\d\d)?\d\d/ig;                 // or this
 
 console.log(date1.match(re5)); // "25/10/1982"
 console.log(date2.match(re5)); // "25 - 10 - 1982"
@@ -71,7 +73,7 @@ let url3 = 'https://elzero.org';
 let url4 = 'https://www.elzero.org';
 let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
-let re6 = /(https?:\/\/(www.)?)?\w{6}.\w{3}(:\d{4}\/\w{8}.\w{3}\?id=\d{3}&cat=\w{6})?/; // Write Your Pattern Here
+let re6 = /(https?:\/\/(www.)?)?\w{6}.\w{3}(:\d{4}\/\w{8}.\w{3}\?id=\d{3}&cat=\w{6})?/ig; // Write Your Pattern Here
 
 console.log(url1.match(re6));
 console.log(url2.match(re6));
