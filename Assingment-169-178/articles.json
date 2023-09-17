@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "authorName": "Nageh",
+        "depart": "CS",
+        "title": "Anne with an E",
+        "content":  "this is dummy content"  
+    },
+    {
+        "id": 2,
+        "authorName": "mohamed",
+        "depart": "AI",
+        "title": "Stranger things",
+        "content": "this is dummy content"
+    },
+    {
+        "id": 3,
+        "authorName": "hala",
+        "depart": "DS",
+        "title": "Friends",
+        "content": "this is dummy content"
+    },
+    {
+        "id": 4,
+        "authorName": "ahmed",
+        "depart": "IS",
+        "title": "Wonder",
+        "content": "this is dummy content"
+    },
+    {
+        "id": 5,
+        "authorName": "elqady",
+        "depart": "IT",
+        "title": "not cinderlla's type",
+        "content": "this is dummy content"
+    }
+]
