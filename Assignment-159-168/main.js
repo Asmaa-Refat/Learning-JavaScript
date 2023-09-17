@@ -75,3 +75,97 @@ console.log(birth3);
 // "Mon Oct 25 1982 00:00:00 GMT+0200 (Eastern European Standard Time)"
 // "Mon Oct 25 1982 00:00:00 GMT+0200 (Eastern European Standard Time)"
 // "Mon Oct 25 1982 00:00:00 GMT+0200 (Eastern European Standard Time)"
+
+console.log("-------------------------------");
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+// التكليف 05
+
+// let t0 = performance.now();
+// let count5 = 99999;
+// let start = 1;
+// while(start <= count5) {
+//     console.log(start);
+//     start++;
+// }
+// let t1 = performance.now();
+// console.log(`Loop Took ${(t1 - t0).toFixed(0)} Milliseconds`);
+// Needed Output
+// "Loop Took 1921 Milliseconds."
+
+console.log("-------------------------------");
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+// التكليف 06
+
+// Write Your Generator Function Here
+function* gen() {
+    yield 14;
+    yield 154;
+    yield 494;
+    yield 1034;
+    yield 1774;
+    yield 2714;
+    yield 3854;
+    yield 5194;
+    yield 6734;
+}
+
+let generator6 = gen();
+
+console.log(generator6.next()); // {value: 14, done: false}
+console.log(generator6.next()); // {value: 154, done: false}
+console.log(generator6.next()); // {value: 494, done: false}
+console.log(generator6.next()); // {value: 1034, done: false}
+console.log(generator6.next()); // {value: 1774, done: false}
+console.log(generator6.next()); // {value: 2714, done: false}
+console.log(generator6.next()); // {value: 3854, done: false}
+console.log(generator6.next()); // {value: 5194, done: false}
+console.log(generator6.next()); // {value: 6734, done: false}
+
+
+console.log("-------------------------------");
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+// التكليف 07
+
+function* genNumbers() {
+    let arr = [1, 2, 2, 2, 3, 4, 5];
+    let set = new Set(arr);
+    yield* set;
+}
+function* genLetters() {
+    let arr = ["A", "B", "B", "B", "C", "D"];
+    let set = new Set(arr);
+    yield* set;
+}
+
+// Write Your Generator Function Here
+function* genAll() {
+    yield* genNumbers();
+    yield* genLetters();
+}
+
+let generator7 = genAll();
+
+console.log(generator7.next()); // {value: 2, done: false}
+console.log(generator7.next()); // {value: 1, done: false}
+console.log(generator7.next()); // {value: 3, done: false}
+console.log(generator7.next()); // {value: 4, done: false}
+console.log(generator7.next()); // {value: 5, done: false}
+console.log(generator7.next()); // {value: "A", done: false}
+console.log(generator7.next()); // {value: "B", done: false}
+console.log(generator7.next()); // {value: "C", done: false}
+console.log(generator7.next()); // {value: "D", done: false}
+
+console.log("-------------------------------");
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+// التكليف 08
+
+import calc from "./mod-one.js"
+import {numOne, numTwo, numThree} from "./mod-two.js"
+
+// main.js File
+console.log(calc(numOne, numTwo, numThree)); // 60
+
